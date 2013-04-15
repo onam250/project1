@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+     alert("not yet"); 
+          $.ajax({     
+            url : "https://api.twitter.com/1.1/statuses/retweets/21947795900469248.json  ",  
+            dataType : "json",  
+            timeout:15000,  
+    
+            success : function(data)  
+            {   
+                  $("#data").html("Data successfully obtained! <br />");  
+     for (i=0; i<data.length; i++)  
+                {  
+     $("#data").append("<p>" + data[i].text) +"</p>";  
+     $("#data").append("<p>" + data[i].created_at +"</p>");  
+                }  
+            },  
+      
+            error : function()  
+            {   
+                alert("Failure!");   
+            },  
+      
+        });   
+        </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
+
